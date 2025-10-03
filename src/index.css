@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/*fonts*/
+
+html,
+body {
+    font-family: "estedad-digit", "estedad", "estedad-digit", sans-serif;
+    height: 100%;
+    color: '#000';
+    user-select: none;
+}
+
+/* fonts */
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 100;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Tight";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./assets/fonts/inter/Inter_18pt-Black.ttf") format("truetype");
+}
+
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 100;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/Estedad-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 100;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Thin.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 200;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 500;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "estedad-digit";
+    font-weight: 900;
+    font-style: normal;
+    src: url("./assets/fonts/estedad/ttf/FD/Estedad-FD-Black.ttf") format("truetype");
+}
+
+
+/*animate pulse*/
+.green{
+    background: #66FF99;
+}
+
+.orange{
+    background: #f17c57fa;
+}
+
+.blue{
+    background: #4766F9;
+}
+
+.rose{
+    background:#FF66CC;
+}
+
+.center {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 1px 1px #0000001a;
+}
+
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        box-shadow: 0 0 0 0px rgb(158, 183, 255);
+    }
+    100% {
+        box-shadow: 0 0 0 5px rgba(211, 219, 255, 0);
+    }
+}
+
+
+.master{
+    color:black;
+    float:right;
+}
+
+@media (max-width:900px){
+    .master{
+        display:none
+    }
+}
+
+/*animate pulse end*/
