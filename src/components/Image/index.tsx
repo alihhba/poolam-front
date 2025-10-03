@@ -55,7 +55,7 @@ const Image: React.FC<ImageProps> = ({
     return (
         <div className={`relative overflow-hidden ${roundedClass} ${className}`}>
             {!isLoaded && !hasError && (
-                <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+                <div className="absolute inset-0  animate-pulse" />
             )}
 
             {/* Error state */}

@@ -3,6 +3,7 @@ import {Icon} from "@/components";
 import {cn} from "@/lib/utils";
 import {paths} from "@/routes/paths";
 import {useLocation, useNavigate} from "react-router-dom";
+import {useEffect, useLayoutEffect, useRef, useState} from "react";
 
 export interface LabelProps {
     id: number;
@@ -42,7 +43,6 @@ const items: LabelProps[] = [
     },
 ];
 
-
 function getActiveByPath(pathname: string): number {
     let best: LabelProps | null = null;
     for (const it of items) {
@@ -59,31 +59,49 @@ const FloatMenu = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const activeId = getActiveByPath(location.pathname || '');
+    const [activeIndex, setActiveIndex] = useState<number>(activeId);
+
+    const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
+    const pillRef = useRef<HTMLDivElement | null>(null);
+    const [pillPosition, setPillPosition] = useState<{ left: number; width: number }>({left: 0, width: 0});
+
+
+    useLayoutEffect(() => {
+        const updatePillPosition = () => {
+            const activeRef = itemRefs.current[activeIndex - 1];
+            if (activeRef) {
+                const rect = activeRef.getBoundingClientRect();
+                setPillPosition({left: rect.left, width: rect.width});
+            }
+        };
+
+        updatePillPosition();
+    }, [activeIndex]);
+
+    useEffect(() => {
+        setActiveIndex(activeId);
+    }, [activeId]);
 
     return (
         <div
             className="relative bg-white flex-row-reverse flex items-center justify-between mx-auto w-[320px] h-[75px] rounded-full px-3 shadow-sm overflow-hidden">
-            {items.map((item) => {
-                const isActive = item.id === activeId;
 
+            {/* Render items with active state */}
+            {items.map((item, index) => {
+                const isActive = item.id === activeIndex;
                 return (
                     <motion.button
                         key={item.id}
-                        layout
-                        onClick={() => navigate(item.path)}
+                        ref={(el) => {
+                            itemRefs.current[index] = el
+                        }}
+                        onClick={() => {
+                            navigate(item.path);
+                            setActiveIndex(item.id);
+                        }}
                         className="relative flex items-center gap-2 h-11 rounded-full px-4 z-10"
                     >
-                        {/* pill only behind active item */}
-                        {isActive && (
-                            <motion.div
-                                layoutId="pill"
-                                className="absolute inset-0 bg-primary-100 rounded-full"
-                                initial={false}
-                                transition={{type: "spring", stiffness: 300, damping: 30}}
-                            />
-                        )}
-
-                        {/* icon */}
+                        {/* Icon */}
                         <Icon
                             name={isActive ? item.activeIcon : item.icon}
                             className={cn(
@@ -92,7 +110,7 @@ const FloatMenu = () => {
                             )}
                         />
 
-                        {/* label */}
+                        {/* Label */}
                         {isActive && (
                             <motion.span
                                 className="text-sm text-white font-medium text-nowrap z-20"
@@ -107,6 +125,18 @@ const FloatMenu = () => {
                     </motion.button>
                 );
             })}
+
+            {/* Active pill */}
+            <motion.div
+                ref={pillRef}
+                className="absolute bg-primary-100 rounded-full h-11 -me-14"
+                initial={{x: pillPosition.left, width: pillPosition.width}}
+                animate={{
+                    x: pillPosition.left,
+                    width: pillPosition.width,
+                }}
+                transition={{type: "spring", stiffness: 300, damping: 30}}
+            />
         </div>
     );
 };
