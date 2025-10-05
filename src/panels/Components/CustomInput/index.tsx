@@ -1,11 +1,10 @@
 import React from 'react';
 import { cn } from '@/lib/utils.ts';
 import { Icon } from "@/components";
-import type { IconName } from "@/components/Icon";
 
 interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    startIcon?: IconName;
-    endIcon?: IconName;
+    startIcon?: string;
+    endIcon?: string;
     className?: string;
     startIconClassName?: string;
     endIconClassName?: string;
