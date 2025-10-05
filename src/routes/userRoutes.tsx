@@ -14,8 +14,6 @@ const SearchResults = lazy(() => import('@/panels/user/pages/SearchResults'));
 export const userRoutes: RouteObject = {
     element: (
         <ProtectedRoute
-            isAuth={true}
-            role={'user'}
             allowedRoles={['user']}
         />
     ),

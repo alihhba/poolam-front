@@ -18,7 +18,8 @@ export default {
                     100 : '#1E1F4B'
                 },
                 border: {
-                    100: '#64748B'
+                    100: '#64748B',
+                    input: '#E1E6E9'
                 },
                 warning: {
                     100: '#DFD800'
@@ -27,7 +28,8 @@ export default {
                     100: '#FFFFFF'
                 },
                 text: {
-                    100: '#787A8D'
+                    100: '#787A8D',
+                    200: '#566B76'
                 },
                 red: {
                     100: '#EE0004'

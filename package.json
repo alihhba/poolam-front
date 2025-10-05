@@ -10,22 +10,28 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@persian-tools/persian-tools": "^4.0.4",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "date-fns-jalali": "^4.1.0-0",
     "framer-motion": "^12.23.22",
     "lodash.debounce": "^4.0.8",
+    "lottie-web": "^5.13.0",
     "node": "^24.9.0",
     "path": "^0.12.7",
     "persian-tools": "^0.0.3",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hook-form": "^7.64.0",
+    "react-lottie": "^1.2.10",
     "react-router-dom": "^7.9.3",
     "tailwind-merge": "^3.3.1",
     "tailwind-scrollbar": "^3.1.0",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "zod": "^4.1.11",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -34,6 +40,7 @@
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
+    "@types/react-lottie": "^1.2.10",
     "@vitejs/plugin-react": "^4.7.0",
     "@vitejs/plugin-react-swc": "^4.1.0",
     "autoprefixer": "^10.4.21",

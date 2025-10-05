@@ -7,8 +7,6 @@ import {NavLayout} from "@/layouts";
 export const adminRoutes: RouteObject = {
     element: (
         <ProtectedRoute
-            isAuth={true}
-            role={'admin'}
             allowedRoles={['admin']}
         />
     ),

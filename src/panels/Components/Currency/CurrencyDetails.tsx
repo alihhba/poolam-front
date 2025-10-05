@@ -1,5 +1,5 @@
 import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
-import {Currency, PercentNumber} from "@/panels/Components";
+import {Currency, PercentNumber, Start} from "@/panels/Components";
 import {CustomPrice, Icon} from "@/components";
 import {DrawerClose} from "@/components/Drawer";
 
@@ -17,10 +17,7 @@ const CurrencyDetails = ({
             <div className={'flex items-center justify-between'}>
 
                 <div>
-                    <Icon
-                        name={'star'}
-                        className={'text-black w-6 h-6'}
-                    />
+                    <Start/>
                 </div>
 
                 <DrawerClose>
