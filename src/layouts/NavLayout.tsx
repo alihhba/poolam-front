@@ -15,6 +15,7 @@ const NavLayout = () => {
             <div className={'flex flex-col h-full grow pt-2.5 pb-44'}>
                 <MainLayout >
                     <Outlet/>
+
                 </MainLayout>
             </div>
 
