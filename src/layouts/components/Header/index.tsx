@@ -1,7 +1,6 @@
 import {cn} from "@/lib/utils.ts";
-import {Icon} from "@/components";
+import {DateFormater, Icon} from "@/components";
 import {MainLayout} from "@/layouts";
-import DateFormater from "@/components/DateFormater";
 
 const MainHeader = () => {
     return (

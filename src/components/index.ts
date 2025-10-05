@@ -1,2 +1,5 @@
 export {default as Icon} from './Icon/index.tsx'
-export {default as DateFormatter} from './DateFormater/index.tsx'
+export {default as DateFormater} from './DateFormater/index.tsx'
+export {default as CustomPrice} from './CustomPrice/index.tsx'
+export {default as Image} from './Image/index.tsx'
+export {Drawer} from './Drawer/index.tsx'

@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import CurrencyFilterItem from "@/panels/Components/CurrencyFilter/Itme.tsx";
-import { useQuery } from "@/hooks";
+import {useQuery} from "@/hooks";
 
 export interface CurrencyFilterItemsProps {
     id: number;
@@ -11,7 +11,7 @@ export interface CurrencyFilterItemsProps {
 
 const CurrencyFilterList = () => {
     const itemRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
-    const { get } = useQuery();
+    const {get} = useQuery();
 
     const currencyFilterItems: CurrencyFilterItemsProps[] = [
         {
@@ -43,8 +43,17 @@ const CurrencyFilterList = () => {
     const handleSelectItem = (slug: string) => {
         itemRefs.current[slug]?.scrollIntoView({
             behavior: 'smooth',
-            block: 'center',
+            block: 'nearest',
+            inline: 'center',
+
         });
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'instant'
+            });
+        }, 100)
     };
 
     useEffect(() => {
@@ -59,11 +68,13 @@ const CurrencyFilterList = () => {
             {currencyFilterItems.map((item) => (
                 <div
                     key={item.id}
-                    ref={(el) => { itemRefs.current[item.slug] = el; }}
+                    ref={(el) => {
+                        itemRefs.current[item.slug] = el;
+                    }}
                     className={`first:ps-6 last:pe-6`}
                     onClick={() => handleSelectItem(item.slug)}
                 >
-                    <CurrencyFilterItem item={item} />
+                    <CurrencyFilterItem item={item}/>
                 </div>
             ))}
         </div>

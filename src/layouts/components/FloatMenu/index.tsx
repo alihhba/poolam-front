@@ -129,7 +129,7 @@ const FloatMenu = () => {
             {/* Active pill */}
             <motion.div
                 ref={pillRef}
-                className="absolute bg-primary-100 rounded-full h-11 -me-14"
+                className="absolute bg-primary-100 rounded-full h-11 -me-12"
                 initial={{x: pillPosition.left, width: pillPosition.width}}
                 animate={{
                     x: pillPosition.left,

@@ -25,6 +25,15 @@ export default {
                 },
                 light: {
                     100: '#FFFFFF'
+                },
+                text: {
+                    100: '#787A8D'
+                },
+                red: {
+                    100: '#EE0004'
+                },
+                green: {
+                    100: '#68C587'
                 }
             }
         },

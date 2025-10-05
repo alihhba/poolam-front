@@ -23,17 +23,17 @@ const CurrencyFilterItem = ({
         <div
             onClick={handleItemClick}
             className={cn(
-                'w-fit px-2 h-8 min-h-8 max-h-8 rounded-[10px] bg-white flex items-center justify-center gap-1 transition-all',
+                'w-fit px-2 h-8 min-h-8 max-h-8 rounded-[10px] bg-white flex items-center justify-center gap-1 ',
                 selectedFilter === item?.slug ? 'bg-primary-100' : ''
             )}
         >
             <Icon name={item.icon} className={cn(
-                'w-4 h-4 text-black transition-all',
+                'w-4 h-4 text-black ',
                 selectedFilter === item?.slug ? 'text-light-100' : ''
             )}/>
 
             <p className={cn(
-                'text-black text-xs transition-all text-nowrap',
+                'text-black text-xs  text-nowrap',
                 selectedFilter === item?.slug ? 'text-light-100' : ''
             )}>
                 {item?.label}
