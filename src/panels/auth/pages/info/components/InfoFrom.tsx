@@ -42,10 +42,12 @@ const InfoFrom = () => {
                 <TextInput
                     name="firstName"
                     label={'نام'}
+                    className={'input-autofill-white'}
                 />
                 <TextInput
                     name="lastName"
                     label={'نام‌خانوادگی'}
+                    className={'input-autofill-white'}
                 />
             </div>
 

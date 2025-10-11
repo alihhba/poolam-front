@@ -3,11 +3,14 @@ import {paths} from "@/routes/paths.ts";
 import {LoginPage} from "@/panels/auth/pages";
 import InfoPage from "@/panels/auth/pages/info/Info.tsx";
 import OtpPage from "@/panels/auth/pages/otp/Otp.tsx";
+import {MainLayout} from "@/layouts";
 
 export const authRoutes: RouteObject = {
     element: (
-        <div className={'w-full h-[100dvh]'}>
-            <Outlet/>
+        <div className={'w-full bg-background-100 pt-4'}>
+            <MainLayout>
+                <Outlet/>
+            </MainLayout>
         </div>
     ),
     children: [

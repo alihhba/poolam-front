@@ -37,6 +37,7 @@ const LoginFrom = () => {
                 name="phoneNumber"
                 label={'شماره موبایل'}
                 placeholder={'شماره موبایل'}
+                className={'input-autofill-white'}
             />
 
             <div className={'mt-4'}>

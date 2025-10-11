@@ -1,8 +1,8 @@
 // src/components/ui/form/NumberInput.tsx
-import {ControlledField} from "./ControlledField";
-import type {FieldValues, Path} from "react-hook-form";
-import type {InputHTMLAttributes} from "react";
-import {Input} from "@/components";
+import { ControlledField } from "./ControlledField";
+import type { FieldValues, Path } from "react-hook-form";
+import type { InputHTMLAttributes } from "react";
+import { Input } from "@/components";
 import clsx from "clsx";
 
 interface NumberInputProps<T extends FieldValues>
@@ -22,11 +22,16 @@ export function NumberInput<T extends FieldValues>({
         <ControlledField<T>
             name={name}
             label={label}
-            render={({field, hasError}) => (
+            render={({ field, hasError }) => (
                 <Input
                     type="number"
                     value={typeof field.value === "number" ? field.value : ""}
-                    onChange={(e) => field.onChange(e.currentTarget.valueAsNumber)}
+                    onChange={(e) => {
+                        const trimmedValue = e.currentTarget.value.trim();
+                        const numberValue = trimmedValue === "" ? "" : Number(trimmedValue);
+                        field.onChange(numberValue);
+                    }}
+                    onBlur={field.onBlur}
                     placeholder={placeholder}
                     className={clsx(className, hasError && "border-red-500")}
                     {...rest}
