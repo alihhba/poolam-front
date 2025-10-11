@@ -36,7 +36,7 @@ const AddHoldingForm = () => {
     const CurrencyItems: CurrencyType[] = [
         {
             id: '1',
-            icon: 'bitcoin-(btc)',
+            icon: 'bitcoin-btc',
             name: 'BTC',
             nameFa: 'بیت ‌کوین',
             price: 10000000000,
@@ -44,154 +44,154 @@ const AddHoldingForm = () => {
         },
         {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,
             change: -0.1
         }, {
             id: '2',
-            icon: 'tether-(usdt)',
+            icon: 'tether-usdt',
             name: 'USDT',
             nameFa: 'تتر',
             price: 1284793,

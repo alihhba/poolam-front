@@ -1,39 +1,88 @@
-import React, {useEffect, useState} from 'react';
-import {cn} from "@/lib/utils.ts";
-
-// Type for the icon name, just as a string.
-type IconName = string;
+// src/components/Icon.tsx
+import React from "react";
+import { cn } from "@/lib/utils.ts";
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
-    name: IconName;
+    name: string;
     className?: string;
 }
 
-const Icon: React.FC<IconProps> = ({name, className, ...props}) => {
-    const [SvgIcon, setSvgIcon] = useState<React.FC<React.SVGProps<SVGSVGElement>> | null>(null);
+const iconModules = import.meta.glob("@/assets/icons/**/*.svg");
 
-    useEffect(() => {
-        // Dynamically import the SVG when the name changes
-        const loadIcon = async () => {
-            try {
-                // Dynamically import the SVG file
-                const iconModule = await import(`@/assets/icons/${name?.replaceAll('_', '-')}.svg?react`);
-                setSvgIcon(() => iconModule.default);
-            } catch (error) {
-                console.error(`Error loading icon: ${name}`, error);
-                setSvgIcon(null); // You can set a fallback icon if needed
-            }
-        };
+const Icon: React.FC<IconProps> = ({ name, className, ...props }) => {
+    const [IconComponent, setIconComponent] = React.useState<React.FC<React.SVGProps<SVGSVGElement>> | null>(null);
+    const [loading, setLoading] = React.useState(true);
+    const [error, setError] = React.useState(false);
 
-        loadIcon();
-    }, [name]);
+    const fileName = name?.replaceAll("_", "-");
 
-    // Render the icon or a fallback if not found
-    return SvgIcon ? <SvgIcon className={className} {...props} /> :
-        <div className={cn(
-            'w-full h-full bg-gray-200 animate-pulse rounded-md',
-            className
-        )}></div>;
+    React.useEffect(() => {
+        if (!fileName) {
+            setLoading(false);
+            return;
+        }
+
+        // Find the matching module
+        const modulePath = Object.keys(iconModules).find(path => {
+            const pathFileName = path.split("/").pop()?.replace(".svg", "")?.replaceAll("_", "-");
+            return pathFileName === fileName;
+        });
+
+        if (!modulePath) {
+            console.warn(`⚠️ Icon not found: ${fileName}`);
+            setError(true);
+            setLoading(false);
+            return;
+        }
+
+        // Dynamically import the icon
+        iconModules[modulePath]()
+            .then((module: any) => {
+                const Component = module.default || module.ReactComponent;
+                if (Component) {
+                    setIconComponent(() => Component);
+                } else {
+                    setError(true);
+                }
+            })
+            .catch((err) => {
+                console.error(`Failed to load icon ${fileName}:`, err);
+                setError(true);
+            })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, [fileName]);
+
+    if (loading) {
+        return (
+            <div
+                className={cn(
+                    "animate-pulse bg-gray-200 rounded-md",
+                    className
+                )}
+            />
+        );
+    }
+
+    if (error || !IconComponent) {
+        return (
+            <div
+                className={cn(
+                    "bg-gray-100 rounded-md flex items-center justify-center text-gray-400",
+                    className
+                )}
+                style={{
+                    width: props.width || 24,
+                    height: props.height || 24,
+                }}
+            >
+                ?
+            </div>
+        );
+    }
+
+    return <IconComponent className={className} {...props} />;
 };
 
 export default Icon;
