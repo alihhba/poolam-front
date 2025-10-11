@@ -3,7 +3,7 @@ import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 import clsx from "clsx";
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "danger";
-type ButtonSize = "sm" | "md" | "lg";
+type ButtonSize = "sm" | "md" | "lg" | 'square';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant;
@@ -51,6 +51,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         "h-8 px-3 text-sm": size === "sm",
                         "h-10 px-4 text-base": size === "md",
                         "h-12 px-6 text-lg": size === "lg",
+                        "!h-10 !w-10 !min-w-10 bg-transparent border !min-h-10 !border-gray-400 text-[14px]": size === "square",
                     },
                     "disabled:opacity-50 disabled:cursor-not-allowed",
                     className

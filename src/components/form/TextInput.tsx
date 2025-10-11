@@ -9,19 +9,22 @@ interface TextInputProps<T extends FieldValues>
     extends Omit<InputHTMLAttributes<HTMLInputElement>, "name" | "type"> {
     name: Path<T>;
     label?: string;
+    labelClassName?: string;
 }
 
 export function TextInput<T extends FieldValues>({
                                                      name,
                                                      label,
                                                      placeholder,
+                                                     labelClassName,
                                                      ...rest
                                                  }: TextInputProps<T>) {
     return (
         <ControlledField<T>
             name={name}
-            render={({ field, hasError }) => (
+            render={({field, hasError}) => (
                 <FloatingLabelInput
+                    labelClassName={labelClassName}
                     type="text"
                     label={label!}
                     value={typeof field.value === "string" ? field.value : ""}

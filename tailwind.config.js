@@ -12,7 +12,8 @@ export default {
                     200: '#D3DBFF'
                 },
                 background: {
-                    100: '#EFF4FE'
+                    100: '#EFF4FE',
+                    200: '#F8F8F8'
                 },
                 base : {
                     100 : '#1E1F4B'

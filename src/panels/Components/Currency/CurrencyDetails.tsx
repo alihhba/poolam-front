@@ -1,6 +1,6 @@
 import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
-import {Currency, PercentNumber, Start} from "@/panels/Components";
-import {CustomPrice, Icon} from "@/components";
+import {Currency, PercentNumber, Star} from "@/panels/Components";
+import {Button, CustomPrice, Icon} from "@/components";
 import {DrawerClose} from "@/components/Drawer";
 
 interface Props {
@@ -17,17 +17,18 @@ const CurrencyDetails = ({
             <div className={'flex items-center justify-between'}>
 
                 <div>
-                    <Start/>
+                    <Star/>
                 </div>
 
                 <DrawerClose>
-                    <div
-                        className={'flex items-center justify-center w-10 h-10 border overflow-hidden border-gray-400 rounded-[14px]'}>
+                    <Button
+                        size={'square'}
+                    >
                         <Icon
                             name={'close'}
                             className={'text-black w-4 h-4'}
                         />
-                    </div>
+                    </Button>
                 </DrawerClose>
             </div>
 

@@ -1,7 +1,7 @@
 import {Icon} from "@/components";
 import {useState} from "react";
 
-const Start = () => {
+const Star = () => {
     const [active, setActive] = useState<boolean>(false);
 
     return (
@@ -18,4 +18,4 @@ const Start = () => {
     );
 };
 
-export default Start
+export default Star

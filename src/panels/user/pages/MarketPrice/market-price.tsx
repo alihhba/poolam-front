@@ -8,7 +8,7 @@ const MarketPrice = () => {
     return (
         <div className={'w-full flex flex-col'}>
             {/*Search box*/}
-            <div className={'pb-2'}>
+            <div className={'pb-2 pt-1'}>
                 <SearchBox/>
             </div>
 

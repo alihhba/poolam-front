@@ -5,6 +5,7 @@ export const paths = {
     user: {
         market_price: "/market-price",
         holdings: "/holdings",
+        add_holding: "/holdings/create",
         reminder: "/reminder",
         profile: '/profile',
         search_results: '/search-results',
@@ -14,5 +15,7 @@ export const paths = {
     },
     auth: {
         login: "/auth/login",
+        otp: "/auth/otp",
+        info: "/auth/info",
     }
 };

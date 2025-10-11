@@ -2,12 +2,13 @@ import {z} from "zod";
 import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Button, Form, TextInput} from "@/components";
-import {useAuthStore} from "@/store/useAuthStore.ts";
 import {useNavigate} from "react-router-dom";
+import {usePhoneStore} from "@/store/usePhoneStore.ts";
+import {paths} from "@/routes/paths.ts";
 
 const LoginFrom = () => {
-    const {login} = useAuthStore()
     const navigate = useNavigate()
+    const setPhone = usePhoneStore((state) => state.setPhone)
 
     const schema = z.object({
         phoneNumber: z
@@ -25,9 +26,8 @@ const LoginFrom = () => {
 
 
     function onSubmit(values: Schema) {
-        console.log("✅ Submitted:", values);
-        login('fsfsd', 'user')
-        navigate('/market-price')
+        setPhone(values?.phoneNumber)
+        navigate(paths.auth.otp)
     }
 
     return (

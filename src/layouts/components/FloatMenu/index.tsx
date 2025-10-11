@@ -69,14 +69,21 @@ const FloatMenu = () => {
     useLayoutEffect(() => {
         const updatePillPosition = () => {
             const activeRef = itemRefs.current[activeIndex - 1];
-            if (activeRef) {
-                const rect = activeRef.getBoundingClientRect();
-                setPillPosition({left: rect.left, width: rect.width});
+            const container = pillRef.current?.parentElement;
+            if (activeRef && container) {
+                const left = activeRef.offsetLeft;
+                const width = activeRef.offsetWidth;
+                setPillPosition({ left, width });
             }
         };
 
         updatePillPosition();
+
+        // Recalculate when window resizes
+        window.addEventListener("resize", updatePillPosition);
+        return () => window.removeEventListener("resize", updatePillPosition);
     }, [activeIndex]);
+
 
     useEffect(() => {
         setActiveIndex(activeId);
@@ -129,7 +136,7 @@ const FloatMenu = () => {
             {/* Active pill */}
             <motion.div
                 ref={pillRef}
-                className="absolute bg-primary-100 rounded-full h-11 -me-12"
+                className="absolute -me-3.5 bg-primary-100 rounded-full h-11"
                 initial={{x: pillPosition.left, width: pillPosition.width}}
                 animate={{
                     x: pillPosition.left,
@@ -137,6 +144,7 @@ const FloatMenu = () => {
                 }}
                 transition={{type: "spring", stiffness: 300, damping: 30}}
             />
+
         </div>
     );
 };

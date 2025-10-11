@@ -15,7 +15,6 @@ const CurrencyPrimaryItem = ({
                              }: Props) => {
     return (
         <Drawer
-
         >
             <DrawerTrigger>
                 <div className={cn(

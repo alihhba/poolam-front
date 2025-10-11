@@ -1,9 +1,12 @@
 import {images} from "@/constants/images.ts";
-import {LoginForm} from "@/panels/auth/pages/login/components";
 import LottieIcon from "@/components/LottieIcon";
+import {usePhoneStore} from "@/store/usePhoneStore.ts";
 import {DrawerBottomLayout} from "@/panels/auth/pages/layout";
+import OtpForm from "@/panels/auth/pages/otp/components/OtpForm.tsx";
 
-const LoginPage = () => {
+const OtpPage = () => {
+    const phone = usePhoneStore(state => state.phone);
+
     return (
         <div
             style={{
@@ -23,15 +26,15 @@ const LoginPage = () => {
                 <DrawerBottomLayout>
                     <div className={'flex flex-col gap-1'}>
                         <p className={'text-[16px] font-bold leading-6'}>
-                            ورود یا ثبت‌نام
+                            کد تایید را وارد کنید
                         </p>
                         <p className={'text-[12px] text-text-200 font-normal leading-6'}>
-                            برای ادامه شماره موبایل خود را وارد کنید.
+                            کد فعال‌سازی به شماره {phone} ارسال شد.
                         </p>
                     </div>
 
                     <div className={'mt-8'}>
-                        <LoginForm/>
+                        <OtpForm/>
                     </div>
                 </DrawerBottomLayout>
             </div>
@@ -39,4 +42,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage
+export default OtpPage

@@ -1,9 +1,9 @@
 import {images} from "@/constants/images.ts";
-import {LoginForm} from "@/panels/auth/pages/login/components";
 import LottieIcon from "@/components/LottieIcon";
 import {DrawerBottomLayout} from "@/panels/auth/pages/layout";
+import InfoFrom from "@/panels/auth/pages/info/components/InfoFrom.tsx";
 
-const LoginPage = () => {
+const InfoPage = () => {
     return (
         <div
             style={{
@@ -23,15 +23,15 @@ const LoginPage = () => {
                 <DrawerBottomLayout>
                     <div className={'flex flex-col gap-1'}>
                         <p className={'text-[16px] font-bold leading-6'}>
-                            ورود یا ثبت‌نام
+                            اطلاعات خود را وارد کنید
                         </p>
                         <p className={'text-[12px] text-text-200 font-normal leading-6'}>
-                            برای ادامه شماره موبایل خود را وارد کنید.
+                            برای تکمیل ثبت نام اطلاعات خود را وارد کنید.
                         </p>
                     </div>
 
                     <div className={'mt-8'}>
-                        <LoginForm/>
+                        <InfoFrom/>
                     </div>
                 </DrawerBottomLayout>
             </div>
@@ -39,4 +39,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage
+export default InfoPage
