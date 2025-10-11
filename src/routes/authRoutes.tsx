@@ -7,7 +7,7 @@ import {MainLayout} from "@/layouts";
 
 export const authRoutes: RouteObject = {
     element: (
-        <div className={'w-full bg-background-100 pt-4'}>
+        <div className={'w-full bg-white pt-4'}>
             <MainLayout>
                 <Outlet/>
             </MainLayout>
