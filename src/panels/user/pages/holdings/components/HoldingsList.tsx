@@ -1,5 +1,5 @@
 import type {HoldingsItem} from "@/panels/user/pages/holdings/types.ts";
-import {Currency, NotFound} from "@/panels/Components";
+import {NotFound} from "@/panels/Components";
 import {AddHoldingButton} from "@/panels/user/pages/holdings/components/index.ts";
 
 const HoldingsList = () => {
@@ -57,10 +57,15 @@ const HoldingsList = () => {
             {/*list*/}
             <div className={'flex flex-col gap-3 mt-7'}>
                 {holdingsItems.map((holding: HoldingsItem) => {
+                    console.log(holding)
                     return (
-                        <Currency.PrimaryItem
-                            item={holding}
-                        />
+                        // <Currency.PrimaryItem
+                        //     item={holding}
+                        // />
+
+                        <div>
+                            items
+                        </div>
                     )
                 })}
             </div>
