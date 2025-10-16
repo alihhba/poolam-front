@@ -73,7 +73,7 @@ const FloatMenu = () => {
             if (activeRef && container) {
                 const left = activeRef.offsetLeft;
                 const width = activeRef.offsetWidth;
-                setPillPosition({ left, width });
+                setPillPosition({left, width});
             }
         };
 
@@ -91,7 +91,10 @@ const FloatMenu = () => {
 
     return (
         <div
-            className="relative bg-white flex-row-reverse flex items-center justify-between mx-auto w-[320px] h-[75px] rounded-full px-3 shadow-sm overflow-hidden">
+            className={cn(
+                "relative bg-white flex-row-reverse flex items-center justify-between mx-auto w-[320px] h-[75px] rounded-full px-3 shadow-sm overflow-hidden",
+                'drop-shadow-lg'
+            )}>
 
             {/* Render items with active state */}
             {items.map((item, index) => {
