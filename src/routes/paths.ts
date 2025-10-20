@@ -6,6 +6,7 @@ export const paths = {
         market_price: "/market-price",
         holdings: "/holdings",
         add_holding: "/holdings/create",
+        edit_holding: "/holdings/edit/:id",
         reminder: "/reminder",
         profile: '/profile',
         search_results: '/search-results',

@@ -1,5 +1,5 @@
 import {Icon} from "@/components";
-import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
+import type {CurrencyType} from "@/panels/Components/Currency/types.ts";
 
 interface Props {
     item: CurrencyType

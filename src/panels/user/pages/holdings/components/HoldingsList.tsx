@@ -1,27 +1,17 @@
 import type {HoldingsItem} from "@/panels/user/pages/holdings/types.ts";
 import {NotFound} from "@/panels/Components";
-import {AddHoldingButton} from "@/panels/user/pages/holdings/components/index.ts";
+import {AddHoldingButton, HoldingCard} from "@/panels/user/pages/holdings/components/index.ts";
+import {CurrencyItems, holdingsItems} from "@/data/FakeData.ts";
 
 const HoldingsList = () => {
-
-    const holdingsItems: HoldingsItem[] = [
-        {
-            id: '1',
-            icon: 'bitcoin-(btc)',
-            name: 'BTC',
-            nameFa: 'بیت ‌کوین',
-            price: 10000000000,
-            change: 0.1
-        },
-        {
-            id: '2',
-            icon: 'tether-(usdt)',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
+    const formatedHoldings = holdingsItems.map((item) => {
+        const currency = CurrencyItems.find(it => it?.slug === item?.slug)
+        return {
+            ...item,
+            currency: currency
         }
-    ]
+    })
+
 
     if (!holdingsItems) {
         return (
@@ -56,16 +46,14 @@ const HoldingsList = () => {
 
             {/*list*/}
             <div className={'flex flex-col gap-3 mt-7'}>
-                {holdingsItems.map((holding: HoldingsItem) => {
-                    console.log(holding)
-                    return (
-                        // <Currency.PrimaryItem
-                        //     item={holding}
-                        // />
+                {formatedHoldings.map((holding: HoldingsItem) => {
+                    if (!holding) return null;
 
-                        <div>
-                            items
-                        </div>
+                    return (
+                        <HoldingCard
+                            key={holding.id}
+                            data={holding}
+                        />
                     )
                 })}
             </div>

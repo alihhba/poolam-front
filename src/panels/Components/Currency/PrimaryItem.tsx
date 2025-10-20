@@ -1,10 +1,11 @@
 // currency item with the info , chart , price
 
-import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
 import {cn} from "@/lib/utils.ts";
-import {CustomPrice, Drawer, Image} from "@/components";
+import {CustomPrice, Drawer} from "@/components";
 import {Currency, PercentNumber} from "@/panels/Components";
 import {DrawerContent, DrawerTrigger} from "@/components/Drawer";
+import type {CurrencyType} from "@/panels/Components/Currency/types.ts";
+import {SparkLineChart} from "@/components/charts";
 
 interface Props {
     item: CurrencyType
@@ -24,11 +25,8 @@ const CurrencyPrimaryItem = ({
                         item={item}
                     />
 
-                    <div>
-                        <Image
-                            src={'example_chart'}
-                            alt={'chart'}
-                        />
+                    <div className={'w-24 h-full'}>
+                        <SparkLineChart/>
                     </div>
 
                     <div className={'flex flex-col items-end '}>

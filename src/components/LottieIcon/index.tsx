@@ -14,7 +14,7 @@ const LottieIcon = () => {
 
     return (
         <div className="lottie-container">
-            <Lottie options={defaultOptions} height={150} width={150} />
+            <Lottie  options={defaultOptions} height={150} width={150} />
         </div>
     );
 };

@@ -1,7 +1,8 @@
-import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
 import {Currency, PercentNumber, Star} from "@/panels/Components";
 import {Button, CustomPrice, Icon} from "@/components";
 import {DrawerClose} from "@/components/Drawer";
+import {Chart} from "@/components/charts";
+import type {CurrencyType} from "@/panels/Components/Currency/types.ts";
 
 interface Props {
     item: CurrencyType
@@ -10,6 +11,18 @@ interface Props {
 const CurrencyDetails = ({
                              item
                          }: Props) => {
+
+    const sampleData = [
+        {day: "شنبه", value: 15},
+        {day: "یکشنبه", value: 14},
+        {day: "دوشنبه", value: 12},
+        {day: "سه‌شنبه", value: 10},
+        {day: "چهارشنبه", value: 13},
+        {day: "پنجشنبه", value: 16},
+        {day: "جمعه", value: 18},
+        {day: "شنبه", value: 15},
+
+    ];
 
     return (
         <div className={'flex flex-col'}>
@@ -46,6 +59,17 @@ const CurrencyDetails = ({
                     <PercentNumber data={item?.change}/>
                 </div>
 
+            </div>
+
+
+            <div className="pt-4 w-full h-full">
+                <Chart
+                    data={sampleData}
+                    xAxisKey="day"
+                    yAxisKey="value"
+                    height={230}
+                    color="#16a34a"
+                />
             </div>
         </div>
     );

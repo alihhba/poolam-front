@@ -1,8 +1,8 @@
+import type {CurrencyType} from "@/panels/Components/Currency/types.ts";
+
 export interface HoldingsItem {
     id: string;
-    icon: string;
-    name: string;
-    nameFa: string;
-    price?: number;
-    change?: number;
+    slug: string;
+    currency?: CurrencyType;
+    assets: number;
 }

@@ -3,20 +3,29 @@ import {useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {Button, CustomPrice, Form, Icon, Image} from "@/components";
 import {SelectDrawer} from "@/components/form/SelectDrawer.tsx";
-import type {CurrencyType} from "@/panels/Components/Currency/PrimaryList.tsx";
 import {Currency, PercentNumber} from "@/panels/Components";
 import {cn} from "@/lib/utils.ts";
 import {TextSimpleInput} from "@/components/form/TextSimpleInput.tsx";
 import {useNavigate} from "react-router-dom";
+import type {CurrencyType} from "@/panels/Components/Currency/types.ts";
+import {CurrencyItems} from "@/data/FakeData.ts";
 import {paths} from "@/routes/paths.ts";
 
 const AddHoldingForm = () => {
     const navigate = useNavigate()
 
+    const CurrencyFormatedItems = CurrencyItems.map((item) => {
+        return {
+            ...item,
+            id: item?.slug
+        }
+    })
+
     const schema = z.object({
         currency: z.string().min(1, {message: 'error'}),
         count: z.string().min(1, {message: 'error'}),
     });
+
     type Schema = z.infer<typeof schema>;
 
     const form = useForm<Schema>({
@@ -33,179 +42,13 @@ const AddHoldingForm = () => {
         console.log(values)
     }
 
-    const CurrencyItems: CurrencyType[] = [
-        {
-            id: '1',
-            icon: 'bitcoin-btc',
-            name: 'BTC',
-            nameFa: 'بیت ‌کوین',
-            price: 10000000000,
-            change: 0.1
-        },
-        {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        }, {
-            id: '2',
-            icon: 'tether-usdt',
-            name: 'USDT',
-            nameFa: 'تتر',
-            price: 1284793,
-            change: -0.1
-        },
-    ]
 
     return (
-
         <Form<Schema> form={form} onSubmit={onSubmit}>
             <div className={'flex flex-col gap-4'}>
                 <SelectDrawer
                     name="currency"
-                    options={CurrencyItems}
+                    options={CurrencyFormatedItems}
                     searchable
                     searchOn={["name", "nameFa"]}
                     trigger={({data}) => {
