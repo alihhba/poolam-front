@@ -4,12 +4,13 @@ import {CustomPrice} from "@/components";
 import {PercentNumber} from "@/panels/Components";
 
 interface Props {
-    data: HoldingsItem;
+    data?: HoldingsItem;
 }
 
 const HoldingCard = ({
                          data
                      }: Props) => {
+    if (!data || !data.currency) return null;
     const {
         assets,
         currency,
@@ -22,7 +23,6 @@ const HoldingCard = ({
         change
     } = currency || {};
 
-    if (!data || !currency) return null;
 
     return (
         <div className={'w-full h-[58px] bg-light-100 flex justify-between items-center px-[13px] rounded-[20px]'}>
